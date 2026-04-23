@@ -186,6 +186,9 @@ html, body {
     height: 100svh;
     padding: 0 !important;
   }
+  .mobile-hero-bg {
+    background-position: 65% center !important;
+  }
   .mobile-hero-gradient {
     position: absolute;
     bottom: 0;
