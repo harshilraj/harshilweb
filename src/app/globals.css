@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #E9E7E0;
+  --color-dark: #1B3A2D;
+  --color-black-sec: #0D0D0D;
+  --color-white: #FFFFFF;
+  --color-muted: #6B6B60;
+
+  --font-inter: "Inter Tight", "Inter", sans-serif;
+  --font-inter-regular: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: #E9E7E0;
+    --color-dark: #1B3A2D;
+    
+    --text-hero: clamp(110px, 16vw, 260px);
+    --text-display: clamp(48px, 5.5vw, 82px);
+    --text-body: 15px;
+    
+    --section-px: 6vw;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --text-body: 17px;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-hero {
+    font-family: var(--font-inter);
+    font-size: var(--text-hero);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+  
+  .text-display {
+    font-family: var(--font-inter);
+    font-size: var(--text-display);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+
+  .text-body {
+    font-family: var(--font-inter);
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-pill {
+    font-family: var(--font-inter-regular);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: 1.5px solid var(--color-dark);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-dark);
+    transition: all 0.25s ease;
+    letter-spacing: 0;
+  }
+
+  .nav-pill:hover, .nav-pill.active {
+    background: var(--color-dark);
+    color: var(--color-white);
+    border-color: var(--color-dark);
+  }
+  
+  .nav-pill.hero-pill {
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
+  
+  .nav-pill.hero-pill:hover {
+    background: var(--color-white);
+    color: var(--color-dark);
+  }
+
+  .cta-btn {
+    padding: 8px 20px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    border: 1.5px solid var(--color-dark);
+    border-radius: 999px;
+    font-family: var(--font-inter-regular);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    letter-spacing: 0;
+  }
+  
+  .cta-btn.hero-btn {
+    border-color: var(--color-white);
+  }
+
+  .cta-btn:hover {
+    background: var(--color-white);
+    color: var(--color-dark);
+    border-color: var(--color-white);
+  }
+
+  .hw-accel {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+}
+
+/* Custom Cursor */
+* { cursor: none !important; }
+
+#cursor-outer {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #1B3A2D;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background 0.2s ease;
+}
+
+#cursor-dot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: #1B3A2D;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+}
+
+@media (hover: none) {
+  #cursor-outer, #cursor-dot { 
+    display: none !important; 
+  }
+  * { cursor: auto !important; }
 }
