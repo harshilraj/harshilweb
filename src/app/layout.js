@@ -1,4 +1,4 @@
-import { Inter, Inter_Tight } from "next/font/google";
+import { Inter, Inter_Tight, Anton } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +11,12 @@ const interTight = Inter_Tight({
   variable: "--font-inter",
 });
 
+const anton = Anton({
+  weight: '400',
+  subsets: ["latin"],
+  variable: "--font-anton",
+});
+
 export const metadata = {
   title: "Harshil Raj | AI × Growth × GTM",
   description: "AI Systems expert, ex-founder, and growth-focused technologist. The go-to person at the intersection of AI × Growth × GTM.",
@@ -18,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable} ${anton.variable}`}>
       <body className="antialiased">
         {children}
       </body>
