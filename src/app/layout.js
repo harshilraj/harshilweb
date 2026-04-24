@@ -26,7 +26,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "Harshil Raj — AI Builder, Consultant & GTM Strategist in India",
+  title: "Harshil Raj | AI Builder, Consultant & GTM Strategist in India",
   description: "Harshil Raj is an AI systems builder, consultant, and GTM strategist based in India. Helping founders and companies grow faster with AI workflows, automation, and distribution strategy. 8.8K+ LinkedIn audience.",
   keywords: ["Harshil Raj", "AI builder India", "AI consultant India", "GTM strategist India", "AI systems expert", "AI workflow consultant", "growth consultant India", "AI automation expert", "LinkedIn creator AI India", "AI GTM strategy", "tech consultant India", "AI tools expert India", "growth hacker India", "AI distribution strategy", "startup consultant India", "AI content creator India", "Harshil Raj AI", "Harshil Raj consultant", "Harshil Raj LinkedIn", "AI freelancer India", "AI agency India"],
   authors: [{ name: "Harshil Raj" }],
@@ -49,7 +49,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://harshilraj.vercel.app/',
-    title: 'Harshil Raj — AI Builder & GTM Strategist in India',
+    title: 'Harshil Raj | AI Builder & GTM Strategist in India',
     description: 'AI systems, GTM strategy, and distribution for founders who want to grow fast. Based in India. 8.8K+ LinkedIn.',
     siteName: 'Harshil Raj',
     locale: 'en_IN',
@@ -66,7 +66,7 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@harshilraj',
     creator: '@harshilraj',
-    title: 'Harshil Raj — AI Builder & GTM Strategist in India',
+    title: 'Harshil Raj | AI Builder & GTM Strategist in India',
     description: 'AI systems, GTM strategy, and distribution for founders who want to grow fast. 8.8K+ LinkedIn. Based in India.',
     images: ['https://harshilraj.vercel.app/og-image.jpg'],
   },
@@ -78,12 +78,12 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/harshil.jpg' },
+      { url: '/harshil.jpg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/harshil.jpg', sizes: '16x16', type: 'image/jpeg' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/harshil.jpg', sizes: '180x180', type: 'image/jpeg' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
       "@type": "WebSite",
       "name": "Harshil Raj",
       "url": "https://harshilraj.vercel.app",
-      "description": "Personal website of Harshil Raj — AI Builder, GTM Strategist and Consultant based in India.",
+      "description": "Personal website of Harshil Raj | AI Builder, GTM Strategist and Consultant based in India.",
       "author": { "@type": "Person", "name": "Harshil Raj" },
       "potentialAction": {
         "@type": "SearchAction",
@@ -133,7 +133,7 @@ export default function RootLayout({ children }) {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Harshil Raj — AI Consulting",
+      "name": "Harshil Raj | AI Consulting",
       "url": "https://harshilraj.vercel.app",
       "description": "AI systems consulting, GTM strategy, and growth advisory for startups and founders in India and globally.",
       "founder": { "@type": "Person", "name": "Harshil Raj" },
@@ -158,7 +158,7 @@ export default function RootLayout({ children }) {
           "name": "What does Harshil Raj do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Harshil Raj builds AI systems, designs GTM strategies, and advises startups on growth and distribution. He works with founders who want to leverage AI as infrastructure — not just a tool — to achieve compounding returns in their business."
+            "text": "Harshil Raj builds AI systems, designs GTM strategies, and advises startups on growth and distribution. He works with founders who want to leverage AI as infrastructure, not just a tool, to achieve compounding returns in their business."
           }
         },
         {
