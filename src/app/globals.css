@@ -11,8 +11,15 @@
   --font-inter-regular: "Inter", sans-serif;
 }
 
-html, body {
+html {
   overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: visible;
   max-width: 100%;
 }
 
@@ -63,6 +70,7 @@ html.lenis body {
     color: var(--color-dark);
     font-family: var(--font-inter);
     overflow-x: hidden;
+    overflow-y: visible;
   }
 }
 
