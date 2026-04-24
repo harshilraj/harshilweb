@@ -12,25 +12,32 @@
 }
 
 html {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
   max-width: 100%;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
 }
 
 body {
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
   max-width: 100%;
 }
 
-/* Hide scrollbar for a clean editorial look */
-*::-webkit-scrollbar {
-  display: none;
-}
-
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 html.lenis,
@@ -79,8 +86,8 @@ html.lenis body {
     background-color: var(--color-bg);
     color: var(--color-dark);
     font-family: var(--font-inter);
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
   }
 }
 
