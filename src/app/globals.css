@@ -23,6 +23,16 @@ body {
   max-width: 100%;
 }
 
+/* Hide scrollbar for a clean editorial look */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
