@@ -26,9 +26,9 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "Harshil Raj | AI Builder, Consultant & GTM Strategist in India",
-  description: "Harshil Raj is an AI systems builder, consultant, and GTM strategist based in India. Helping founders and companies grow faster with AI workflows, automation, and distribution strategy. 8.8K+ LinkedIn audience.",
-  keywords: ["Harshil Raj", "AI builder India", "AI consultant India", "GTM strategist India", "AI systems expert", "AI workflow consultant", "growth consultant India", "AI automation expert", "LinkedIn creator AI India", "AI GTM strategy", "tech consultant India", "AI tools expert India", "growth hacker India", "AI distribution strategy", "startup consultant India", "AI content creator India", "Harshil Raj AI", "Harshil Raj consultant", "Harshil Raj LinkedIn", "AI freelancer India", "AI agency India"],
+  title: "Harshil Raj | AI Automation & Cloud Infrastructure Expert",
+  description: "Harshil Raj builds AI-native automation systems and cloud infrastructure. Helping businesses scale operations without adding headcount. 9K+ on LinkedIn.",
+  keywords: ["Harshil Raj", "AI automation expert", "cloud infrastructure", "AWS deployment", "Google Cloud architecture", "AI systems", "AI workflows", "growth consulting", "GTM engine", "AI-native operations", "Harshil Raj LinkedIn", "startup consultant India"],
   authors: [{ name: "Harshil Raj" }],
   creator: "Harshil Raj",
   publisher: "Harshil Raj",
@@ -49,8 +49,8 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://harshilraj.vercel.app/',
-    title: 'Harshil Raj | AI Builder & GTM Strategist in India',
-    description: 'AI systems, GTM strategy, and distribution for founders who want to grow fast. Based in India. 8.8K+ LinkedIn.',
+    title: 'Harshil Raj | AI Automation & Cloud Infrastructure Expert',
+    description: 'AI-native automation systems and cloud infrastructure for businesses to scale operations without adding headcount. 9K+ on LinkedIn.',
     siteName: 'Harshil Raj',
     locale: 'en_IN',
     images: [
@@ -66,8 +66,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@harshilraj',
     creator: '@harshilraj',
-    title: 'Harshil Raj | AI Builder & GTM Strategist in India',
-    description: 'AI systems, GTM strategy, and distribution for founders who want to grow fast. 8.8K+ LinkedIn. Based in India.',
+    title: 'Harshil Raj | AI Automation & Cloud Infrastructure Expert',
+    description: 'AI-native automation systems and cloud infrastructure for businesses to scale operations without adding headcount. 9K+ on LinkedIn.',
     images: ['https://harshilraj.vercel.app/og-image.jpg'],
   },
   verification: {
@@ -107,10 +107,10 @@ export default function RootLayout({ children }) {
         "https://www.linkedin.com/in/harshilraj",
         "https://twitter.com/harshilraj"
       ],
-      "jobTitle": "AI Builder & GTM Strategist",
-      "description": "AI systems builder, consultant and GTM strategist based in India. Helping founders grow with AI workflows, automation and distribution strategy.",
+      "jobTitle": "AI Automation & Cloud Infrastructure Expert",
+      "description": "AI systems builder, cloud infrastructure expert, and consultant based in India. Helping founders scale operations with AI workflows and cloud architecture.",
       "knowsAbout": [
-        "Artificial Intelligence", "AI Workflows", "AI Automation", "Go-to-Market Strategy", "Growth Strategy", "Distribution Strategy", "LinkedIn Growth", "Content Strategy", "Tech Consulting", "AI Systems Design", "Startup Consulting"
+        "Artificial Intelligence", "AI Workflows", "AI Automation", "Cloud Infrastructure", "AWS", "Google Cloud", "Go-to-Market Strategy", "Operations Scaling", "Startup Consulting"
       ],
       "nationality": { "@type": "Country", "name": "India" },
       "address": { "@type": "PostalAddress", "addressCountry": "IN" },
@@ -133,12 +133,12 @@ export default function RootLayout({ children }) {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Harshil Raj | AI Consulting",
+      "name": "Harshil Raj | AI & Cloud Consulting",
       "url": "https://harshilraj.vercel.app",
-      "description": "AI systems consulting, GTM strategy, and growth advisory for startups and founders in India and globally.",
+      "description": "AI systems automation, cloud infrastructure deployment, and growth advisory for startups and businesses globally.",
       "founder": { "@type": "Person", "name": "Harshil Raj" },
       "areaServed": ["India", "Global"],
-      "serviceType": ["AI Consulting", "GTM Strategy", "Growth Advisory", "AI Workflow Design", "LinkedIn Growth Strategy", "Content Strategy"],
+      "serviceType": ["AI Consulting", "Cloud Infrastructure", "AI Automation", "AI Workflow Design", "Operations Scaling"],
       "priceRange": "Contact for pricing"
     },
     {
@@ -150,7 +150,7 @@ export default function RootLayout({ children }) {
           "name": "Who is Harshil Raj?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Harshil Raj is an AI systems builder, GTM strategist, and consultant based in India. He helps founders and companies grow faster using AI workflows, automation, and distribution strategy. He has 8.8K+ followers on LinkedIn where he creates content around AI, GTM, and growth."
+            "text": "Harshil Raj is an AI systems builder and cloud infrastructure expert based in India. He helps businesses scale operations using AI-native automation and cloud architecture. He has 9K+ followers on LinkedIn where he shares operator-level insights."
           }
         },
         {
@@ -158,7 +158,7 @@ export default function RootLayout({ children }) {
           "name": "What does Harshil Raj do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Harshil Raj builds AI systems, designs GTM strategies, and advises startups on growth and distribution. He works with founders who want to leverage AI as infrastructure, not just a tool, to achieve compounding returns in their business."
+            "text": "Harshil Raj builds end-to-end AI automation workflows, deploys scalable cloud infrastructure (AWS/GCP), and designs GTM engines. He works with businesses to eliminate manual overhead and compound operations without adding headcount."
           }
         },
         {
@@ -174,7 +174,7 @@ export default function RootLayout({ children }) {
           "name": "What is Harshil Raj's expertise in AI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Harshil Raj specializes in AI workflows, AI agents, automation systems, and go-to-market strategy for AI products. He understands the full AI stack and helps businesses implement AI as operational infrastructure rather than standalone tools."
+            "text": "Harshil Raj specializes in AI workflows, multi-model workflows, automation systems, and cloud architecture. He treats AI as operational infrastructure rather than standalone tools, ensuring compounding returns."
           }
         },
         {
