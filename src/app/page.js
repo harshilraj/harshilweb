@@ -652,11 +652,6 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="flex items-center gap-[12px] mb-[32px]">
-              <span className="font-inter font-medium text-[15px] md:text-[16px] text-[#1B3A2D]">
-                harshilraj.growth@gmail.com
-              </span>
-            </div>
             
             {/* Row 3 */}
             <p className="font-inter font-light text-[15px] text-[#6B6B60] leading-[1.6]">
