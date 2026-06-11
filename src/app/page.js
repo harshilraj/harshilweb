@@ -9,6 +9,7 @@ import Lenis from "lenis";
 // Custom Cursor Component
 const CustomCursor = () => {
   useEffect(() => {
+    document.body.classList.add('custom-cursor-active');
     const outer = document.getElementById('cursor-outer');
     const dot = document.getElementById('cursor-dot');
     
@@ -101,6 +102,7 @@ const CustomCursor = () => {
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
+      document.body.classList.remove('custom-cursor-active');
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("mousedown", handleMouseDown);

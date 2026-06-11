@@ -175,7 +175,7 @@ html.lenis body {
 }
 
 /* Custom Cursor */
-* { cursor: none !important; }
+body.custom-cursor-active * { cursor: none !important; }
 
 #cursor-outer {
   position: fixed;

@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://harshilraj.vercel.app; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self'; object-src 'none'; frame-src 'self';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.com https://vercel.live https://*.vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://vercel.live https://*.vercel.live; img-src * data: blob:; font-src 'self' data: https://fonts.gstatic.com https://vercel.live https://*.vercel.live; connect-src 'self' https://*.vercel.com https://vercel.live wss://*.vercel.live wss://*.vercel.com https://*.vercel-insights.com; media-src 'self'; object-src 'none'; frame-src 'self' https://vercel.live;",
           },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
