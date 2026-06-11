@@ -400,7 +400,7 @@ const Hero = () => {
         style={{ y: yPhoto }}
       >
         <Image
-          src="/harshil.jpg"
+          src="/harshil.webp"
           alt="Harshil Raj - AI Automation and Cloud Infrastructure Expert"
           fill
           priority={true}
@@ -416,13 +416,13 @@ const Hero = () => {
       <div className="w-full relative z-20 h-full hw-accel">
         {/* Desktop Layout */}
         <div className="hidden md:block w-full h-full relative">
-          <motion.h1 
+          <motion.h2 
             ref={textRef1} 
             style={{ x: xHarshil, opacity: opacityHero }}
             className="text-hero text-white absolute left-[48px] bottom-[220px] z-20 m-0 font-bold"
           >
             HARSHIL
-          </motion.h1>
+          </motion.h2>
           
           <div 
             ref={subtextRef}
@@ -433,13 +433,13 @@ const Hero = () => {
             </p>
           </div>
 
-          <motion.h1 
+          <motion.h2 
             ref={textRef2} 
             style={{ x: xRaj, opacity: opacityHero }}
             className="text-hero text-white absolute right-[15%] bottom-[40px] text-right z-20 m-0 font-bold"
           >
             RAJ
-          </motion.h1>
+          </motion.h2>
         </div>
 
         {/* Mobile Layout */}
@@ -453,13 +453,13 @@ const Hero = () => {
             <div ref={subtextRef}>AI · Product · GTM</div>
           </motion.div>
 
-          <motion.h1 
+          <motion.h2 
             style={{ opacity: opacityHero }}
             className="mobile-hero-name mobile-display-font"
           >
             <div ref={textRef1} style={{ display: 'inline-block' }}>HARSHIL</div><br/>
             <div ref={textRef2} style={{ display: 'inline-block' }}>RAJ</div>
-          </motion.h1>
+          </motion.h2>
         </div>
       </div>
     </section>
@@ -498,6 +498,11 @@ const About = () => {
 
   return (
     <section id="about" className="bg-[#E9E7E0] pt-[110px] pb-[80px] px-[6vw] relative z-20">
+      <FadeUp delay={0.06}>
+        <h1 className="font-inter font-semibold text-[13px] md:text-[14px] text-[#6B6B60] uppercase tracking-[0.15em] mb-[16px] block">
+          AI Systems & Product Consultant
+        </h1>
+      </FadeUp>
       <FadeUp delay={0.12}>
         <h2 className="text-display text-[#1B3A2D] mb-[56px] leading-[1.05] w-full block tracking-[-0.03em] max-w-full mobile-about-headline">
           Making Sense of AI.
@@ -631,12 +636,93 @@ const Expertise = () => {
   );
 };
 
+// Dynamic Terminal Console Simulator for Selected Systems
+const TerminalConsole = ({ sysId }) => {
+  const [logs, setLogs] = useState([]);
+  
+  const pipelineLogs = [
+    { type: 'cmd', text: 'gtm --init --target=icp_leads' },
+    { type: 'info', text: 'Initializing prospecting workflow engine...' },
+    { type: 'ok', text: 'Apollo API connected. Querying ICP parameters...' },
+    { type: 'ok', text: 'Clay DB sync complete. Found 142 companies.' },
+    { type: 'info', text: 'Running multi-source data enrichment...' },
+    { type: 'ok', text: 'Enriched 118 records with verified business emails.' },
+    { type: 'info', text: 'Analyzing intent signals using Claude-3.5-Sonnet...' },
+    { type: 'warn', text: 'Scoring leads: 42 contacts marked High Intent (>8.5).' },
+    { type: 'info', text: 'Writing custom personalization hooks via OpenAI...' },
+    { type: 'success', text: 'Syncing CRM: 42 leads pushed to HubSpot.' },
+    { type: 'success', text: 'Slack alert sent. Engine running in background.' }
+  ];
+
+  const frontDeskLogs = [
+    { type: 'cmd', text: 'retell --monitor-sip-pipe' },
+    { type: 'info', text: 'Twilio SIP Trunk connected. Status: LISTENING...' },
+    { type: 'warn', text: 'INCOMING CALL: +1 (302) 555-0142 (Inquiry)...' },
+    { type: 'info', text: 'Connecting Retell AI voice agent (latency: 120ms)...' },
+    { type: 'ok', text: 'Caller: "Looking to understand automation options."' },
+    { type: 'info', text: 'Intent parsing: Pricing inquiry & Calendar lookup.' },
+    { type: 'ok', text: 'Agent: "We offer custom builds. Let\'s schedule a call."' },
+    { type: 'ok', text: 'Caller: "Sure, tomorrow at 10 AM works."' },
+    { type: 'info', text: 'Querying Cal.com API... Slot verified.' },
+    { type: 'success', text: 'Booking created. Invite sent to caller.' },
+    { type: 'success', text: 'Call completed. Duration: 02m 14s. SIP idle.' }
+  ];
+
+  const opsLogs = [
+    { type: 'cmd', text: 'n8n --listen-webhooks --channel=stripe' },
+    { type: 'info', text: 'Webhook received: Stripe Checkout Completed.' },
+    { type: 'ok', text: 'PostgreSQL: Customer status updated to "active".' },
+    { type: 'info', text: 'Provisioning AWS EC2 sandbox environment...' },
+    { type: 'ok', text: 'EC2 Instance i-03f9a28c launched in ap-south-1.' },
+    { type: 'info', text: 'Injecting custom agent configurations...' },
+    { type: 'ok', text: 'Docker stack initialized (Redis, Python, API).' },
+    { type: 'success', text: 'Provisioning success. Onboarding email sent.' },
+    { type: 'success', text: 'Workflow run #9283 finished. CPU: 0.02s.' }
+  ];
+
+  const currentLogs = sysId === 'SYS-01' ? pipelineLogs : sysId === 'SYS-02' ? frontDeskLogs : opsLogs;
+
+  useEffect(() => {
+    setLogs([]);
+    let currentLine = 0;
+    const interval = setInterval(() => {
+      if (currentLine < currentLogs.length) {
+        setLogs(prev => [...prev, currentLogs[currentLine]]);
+        currentLine++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 350);
+
+    return () => clearInterval(interval);
+  }, [sysId]);
+
+  return (
+    <div className="w-full h-full p-6 font-mono text-[11px] md:text-[12px] bg-[#090909]/95 text-[#A0A090] overflow-y-auto min-h-[300px] select-none rounded-b-2xl">
+      <div className="flex flex-col gap-1.5">
+        {logs.map((log, index) => (
+          <div key={index} className="flex items-start gap-2 leading-relaxed">
+            {log.type === 'cmd' && <span className="text-[#10B981] font-bold">&gt;</span>}
+            {log.type === 'info' && <span className="text-[#8C8C80]">[SYSTEM]</span>}
+            {log.type === 'ok' && <span className="text-[#3B82F6]">[OK]</span>}
+            {log.type === 'warn' && <span className="text-[#F59E0B]">[WARN]</span>}
+            {log.type === 'success' && <span className="text-[#10B981]">[SUCCESS]</span>}
+            <span className={log.type === 'cmd' ? 'text-white font-medium' : log.type === 'success' ? 'text-[#D0FFD0]' : ''}>
+              {log.text}
+            </span>
+          </div>
+        ))}
+        <span className="inline-block w-1.5 h-3.5 bg-[#10B981] animate-pulse ml-0.5" />
+      </div>
+    </div>
+  );
+};
+
 const Systems = () => {
   const list = [
     {
       sysId: "SYS-01",
-      visualId: "VISUALIZATION // REVENUE_PIPELINE",
-      img: "/revenue_pipeline_mockup.png",
+      visualId: "SYSTEM_CONSOLE // REVENUE_PIPELINE",
       title: "Revenue Pipeline Engine",
       desc: "An automated prospecting system that continuously discovers, enriches, and qualifies opportunities so outbound never runs dry.",
       stack: "n8n, Clay, OpenAI, Apollo",
@@ -646,8 +732,7 @@ const Systems = () => {
     },
     {
       sysId: "SYS-02",
-      visualId: "VISUALIZATION // FRONT_OFFICE",
-      img: "/front_desk_mockup.png",
+      visualId: "SYSTEM_CONSOLE // FRONT_OFFICE",
       title: "Always-On Front Desk",
       desc: "An AI powered intake system that responds instantly, qualifies inquiries, and books appointments at any hour, without a human in the loop.",
       stack: "Retell AI, OpenAI, Make, Twilio",
@@ -657,8 +742,7 @@ const Systems = () => {
     },
     {
       sysId: "SYS-03",
-      visualId: "VISUALIZATION // OPERATIONS_LAYER",
-      img: "/operations_layer_mockup.png",
+      visualId: "SYSTEM_CONSOLE // OPERATIONS_LAYER",
       title: "Autonomous Operations Layer",
       desc: "A connected ecosystem of AI workflows that runs the repetitive work across teams and systems automatically.",
       stack: "Node.js, PostgreSQL, Make, n8n",
@@ -691,7 +775,7 @@ const Systems = () => {
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              {/* Image Terminal Mockup */}
+              {/* Interactive CSS Terminal Console */}
               <FadeUp delay={0.2} className="w-full lg:w-1/2">
                 <div className="w-full rounded-2xl border border-[#2A2A2A] bg-white/[0.01] overflow-hidden group hover:border-[#10B981]/30 transition-all duration-300">
                   <div className="flex justify-between items-center px-4 py-3 bg-[#161616]/60 border-b border-[#2A2A2A]">
@@ -704,15 +788,7 @@ const Systems = () => {
                       <div className="w-1.5 h-1.5 rounded-full bg-[#2A2A2A]" />
                     </div>
                   </div>
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={system.img}
-                      alt={system.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out opacity-80 group-hover:opacity-100"
-                    />
-                  </div>
+                  <TerminalConsole sysId={system.sysId} />
                 </div>
               </FadeUp>
 
@@ -892,27 +968,27 @@ const Contact = () => {
         <FadeUp delay={0.24} className="w-full">
           {/* Desktop Footer Name */}
           <div className="hidden md:flex justify-between items-end w-full mt-[80px]">
-            <h1 className="font-inter font-bold text-[clamp(50px,7.5vw,100px)] text-[#1B3A2D] leading-[0.8] m-0 text-left">HARSHIL</h1>
+            <h2 className="font-inter font-bold text-[clamp(50px,7.5vw,100px)] text-[#1B3A2D] leading-[0.8] m-0 text-left">HARSHIL</h2>
             <div className="w-[150px] h-[195px] relative mx-[4vw] shrink-0 mb-[-5px] overflow-hidden">
                <Image
-                 src="/harshil.jpg"
+                 src="/harshil.webp"
                  alt="Harshil Raj"
                  fill
                  sizes="150px"
                  className="object-cover object-center"
                />
             </div>
-            <h1 className="font-inter font-bold text-[clamp(50px,7.5vw,100px)] text-[#1B3A2D] leading-[0.8] m-0 text-right">RAJ</h1>
+            <h2 className="font-inter font-bold text-[clamp(50px,7.5vw,100px)] text-[#1B3A2D] leading-[0.8] m-0 text-right">RAJ</h2>
           </div>
 
           {/* Mobile Footer Name */}
           <div className="md:hidden w-full flex flex-col items-center mobile-footer-names">
-            <h1 className="mobile-display-font text-[#1B3A2D] m-0 leading-[0.85] text-left">
+            <h2 className="mobile-display-font text-[#1B3A2D] m-0 leading-[0.85] text-left">
               HARSHIL<br/>RAJ
-            </h1>
+            </h2>
             <div className="mobile-footer-photo relative overflow-hidden">
               <Image
-                src="/harshil.jpg"
+                src="/harshil.webp"
                 alt="Harshil Raj"
                 fill
                 sizes="80px"
@@ -989,60 +1065,6 @@ export default function Home() {
         </div>
       </div>
       <main className="bg-[#E9E7E0] selection:bg-[#1B3A2D] selection:text-white relative font-inter">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Person",
-                  "name": "Harshil Raj",
-                  "jobTitle": "AI Automation & Cloud Infrastructure Expert",
-                  "url": "https://harshilraj.vercel.app",
-                  "email": "harshilraj.growth@gmail.com",
-                  "sameAs": ["https://linkedin.com/in/harshilraj"],
-                  "knowsAbout": ["AI automation", "cloud infrastructure", "AWS", "Google Cloud", "workflow automation"],
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "Livo",
-                    "description": "AI-native technology services firm",
-                    "areaServed": "IN"
-                  }
-                },
-                {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "What does Harshil Raj build?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Harshil builds AI-native automation systems and cloud infrastructure on AWS and Google Cloud to help businesses scale operations without adding headcount."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "How do I hire Harshil Raj?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Book a discovery call via the website or send a DM on LinkedIn. If there is a real fit, it becomes clear within 30 minutes."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What is the AI Receptionist service?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "An AI-powered customer intake system built on Retell AI, OpenAI, and Make/n8n that responds to inquiries, qualifies leads, and books appointments 24/7 without a human in the loop."
-                      }
-                    }
-                  ]
-                }
-              ]
-            })
-          }}
-        />
         <CustomCursor />
         <Navigation />
         <Hero />

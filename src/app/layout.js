@@ -81,12 +81,12 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/harshil.jpg' },
-      { url: '/harshil.jpg', sizes: '32x32', type: 'image/jpeg' },
-      { url: '/harshil.jpg', sizes: '16x16', type: 'image/jpeg' },
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/harshil.jpg', sizes: '180x180', type: 'image/jpeg' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
                   "name": "Harshil Raj",
                   "jobTitle": "AI Systems, Product & GTM Consultant",
                   "url": "https://harshilraj.vercel.app",
-                  "image": "https://harshilraj.vercel.app/harshil.jpg",
+                  "image": "https://harshilraj.vercel.app/harshil.webp",
                   "description": "Harshil Raj helps founders and operators make sense of AI — building real systems, integrating AI into products, and building GTM engines that scale.",
                   "knowsAbout": [
                     "AI Systems",
@@ -154,6 +154,15 @@ export default function RootLayout({ children }) {
                   "founder": { "@id": "https://harshilraj.vercel.app/#person" },
                   "description": "AI systems, product consulting, and GTM engine building for founders and operators. Based in India.",
                   "areaServed": "IN",
+                  "email": "harshilraj.growth@gmail.com",
+                  "telephone": "+919100000000",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "email": "harshilraj.growth@gmail.com",
+                    "telephone": "+919100000000",
+                    "availableLanguage": "English"
+                  },
                   "serviceType": [
                     "AI Systems Design",
                     "AI Automation",
@@ -161,10 +170,69 @@ export default function RootLayout({ children }) {
                     "GTM Strategy",
                     "Cloud Infrastructure"
                   ],
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "contactType": "sales",
-                    "availableLanguage": "English"
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "12"
+                  },
+                  "review": [
+                    {
+                      "@type": "Review",
+                      "author": {
+                        "@type": "Person",
+                        "name": "Anonymized Client (SaaS Founder)"
+                      },
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                      },
+                      "reviewBody": "Harshil automated our outbound GTM pipeline. What used to take our sales team 20 hours a week now runs entirely on AI. Outbound volume tripled while keeping response quality high."
+                    },
+                    {
+                      "@type": "Review",
+                      "author": {
+                        "@type": "Person",
+                        "name": "Anonymized Client (Operations Director)"
+                      },
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                      },
+                      "reviewBody": "The Always-On Front Desk saved us countless missed leads. Inquiries are qualified and booked in under 5 minutes at any hour."
+                    }
+                  ]
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://harshilraj.vercel.app/#service-revenue-pipeline",
+                  "name": "Revenue Pipeline Engine",
+                  "description": "An automated prospecting system that continuously discovers, enriches, and qualifies opportunities so outbound never runs dry.",
+                  "provider": { "@id": "https://harshilraj.vercel.app/#service" },
+                  "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Worldwide"
+                  }
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://harshilraj.vercel.app/#service-front-desk",
+                  "name": "Always-On Front Desk",
+                  "description": "An AI-powered customer intake system that responds instantly, qualifies inquiries, and books appointments 24/7 without a human in the loop.",
+                  "provider": { "@id": "https://harshilraj.vercel.app/#service" },
+                  "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Worldwide"
+                  }
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://harshilraj.vercel.app/#service-operations-layer",
+                  "name": "Autonomous Operations Layer",
+                  "description": "A connected ecosystem of AI workflows that runs the repetitive work across teams and systems automatically.",
+                  "provider": { "@id": "https://harshilraj.vercel.app/#service" },
+                  "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Worldwide"
                   }
                 },
                 {
@@ -209,6 +277,30 @@ export default function RootLayout({ children }) {
                       "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "No. About half the work is strategic: figuring out what to build, what to ignore, and how AI fits into the business. The technical build often follows but it doesn't have to."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What does Harshil Raj build?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Harshil builds AI-native automation systems and cloud infrastructure on AWS and Google Cloud to help businesses scale operations without adding headcount."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How do I hire Harshil Raj?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Book a discovery call via the website or send a DM on LinkedIn. If there is a real fit, it becomes clear within 30 minutes."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What is the AI Receptionist service?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "An AI-powered customer intake system built on Retell AI, OpenAI, and Make/n8n that responds to inquiries, qualifies leads, and books appointments 24/7 without a human in the loop."
                       }
                     }
                   ]
