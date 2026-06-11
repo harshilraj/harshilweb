@@ -97,11 +97,9 @@ export const metadata = {
     'format-detection': 'telephone=no',
   },
   verification: {
-    // TODO: paste GSC token here
-    google: 'REPLACE_WITH_GSC_TOKEN',
+    google: process.env.NEXT_PUBLIC_GSC_TOKEN,
     other: { 
-      // TODO: paste Bing token here
-      'msvalidate.01': 'REPLACE_WITH_BING_TOKEN' 
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_TOKEN 
     },
   },
 };

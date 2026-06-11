@@ -401,9 +401,9 @@ const Hero = () => {
       >
         <Image
           src="/harshil.jpg"
-          alt="Harshil Raj — AI systems, product and GTM consultant based in India"
+          alt="Harshil Raj - AI Automation and Cloud Infrastructure Expert"
           fill
-          priority
+          priority={true}
           sizes="100vw"
           className="object-cover object-[80%_center]"
         />
@@ -631,6 +631,104 @@ const Expertise = () => {
   );
 };
 
+const Systems = () => {
+  const cards = [
+    {
+      num: "01",
+      title: "Revenue Pipeline Engine",
+      desc: "An automated prospecting system that continuously discovers, enriches, and qualifies opportunities — so outbound never runs dry.",
+      challenge: "Manual prospecting consumed hours per week and made a consistent pipeline of qualified opportunities nearly impossible to maintain.",
+      outcome: "A repeatable acquisition engine that identifies prospects, enriches company data, and routes qualified leads into the sales workflow."
+    },
+    {
+      num: "02",
+      title: "Always-On Front Desk",
+      desc: "An AI-powered intake system that responds instantly, qualifies inquiries, and books appointments — at any hour, without a human in the loop.",
+      challenge: "Missed calls and delayed responses were costing real opportunities while creating overhead that didn't need to exist.",
+      outcome: "A 24/7 front-office layer that captures inquiries, handles common questions, and schedules appointments without touching a calendar."
+    },
+    {
+      num: "03",
+      title: "Autonomous Operations Layer",
+      desc: "A connected ecosystem of AI workflows that runs the repetitive work across teams and systems — automatically.",
+      challenge: "Teams were losing hours to manual coordination, follow-ups, and data entry that required no real thinking.",
+      outcome: "Business-critical workflows run on their own. Manual effort drops. Teams redirect time to work that actually requires a human."
+    }
+  ];
+
+  return (
+    <section id="systems" className="bg-[#0D0D0D] pt-[120px] pb-[120px] px-[6vw] text-[#E9E7E0] w-full mt-[-60px] relative z-30 border-t border-[#2A2A2A]">
+      <div className="w-full max-w-[1200px] mx-auto">
+        <FadeUp delay={0.12}>
+          <span className="font-inter font-normal text-[12px] text-[#A0A090] uppercase tracking-[0.2em] mb-4 block">
+            SELECTED SYSTEMS
+          </span>
+          <h2 className="text-[32px] md:text-[clamp(44px,5.5vw,80px)] font-inter font-extrabold tracking-[-0.03em] mb-4 leading-none text-[#E9E7E0]">
+            Systems that do the work.
+          </h2>
+          <p className="font-inter font-light text-[16px] text-[#A0A090] leading-[1.8] max-w-[640px]">
+            Real-world AI and automation infrastructure built to eliminate operational drag — not demos, not prototypes.
+          </p>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full mt-16">
+          {cards.map((card, idx) => (
+            <FadeUp key={idx} delay={0.24 + idx * 0.12} className="h-full">
+              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-full hover:shadow-[0_0_30px_rgba(16,185,129,0.12)] hover:border-[#3ebf81]/40 hover:-translate-y-1.5 transition-all duration-300 ease-out group">
+                <span className="text-[#10B981] font-mono text-[14px] font-bold tracking-wider">
+                  {card.num}
+                </span>
+                <h3 className="text-[20px] md:text-[22px] font-inter font-extrabold text-white mt-4 mb-3 leading-tight">
+                  {card.title}
+                </h3>
+                <p className="text-[14px] md:text-[15px] text-[#A0A090] font-light leading-[1.6] mb-8">
+                  {card.desc}
+                </p>
+                
+                <div className="mt-auto pt-6 border-t border-white/5 space-y-4">
+                  <p className="text-[14px] text-[#A0A090] font-light leading-[1.6]">
+                    <strong className="text-[#F59E0B] font-medium">Challenge: </strong>
+                    {card.challenge}
+                  </p>
+                  <p className="text-[14px] text-[#A0A090] font-light leading-[1.6]">
+                    <strong className="text-[#10B981] font-medium">Outcome: </strong>
+                    {card.outcome}
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
+        <FadeUp delay={0.6} className="mt-16 text-center">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('contact');
+              if (window.lenis && element) {
+                window.lenis.scrollTo(element, {
+                  duration: 1.4,
+                  offset: -80,
+                  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+              } else if (element) {
+                window.scrollTo({
+                  top: element.offsetTop - 80,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+            className="font-inter font-light text-[14px] text-[#A0A090] hover:text-[#10B981] underline transition-colors"
+          >
+            Every system above is available as a standalone engagement.
+          </a>
+        </FadeUp>
+      </div>
+    </section>
+  );
+};
+
 // Common Questions (FAQ) Component
 const FAQ = () => {
   const faqs = [
@@ -748,9 +846,13 @@ const Contact = () => {
         </FadeUp>
 
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mt-[40px] pt-[20px] border-t border-[#1B3A2D]/10 text-[13px] font-inter text-[#6B6B60] mobile-footer-copyright gap-4">
-          <div className="footer-contact flex gap-3 text-[13px] font-inter text-[#6B6B60]">
+          <div className="footer-contact flex gap-4 items-center text-[13px] font-inter text-[#6B6B60]">
             <a href="https://linkedin.com/in/harshilraj" target="_blank" rel="noopener noreferrer" className="hover:text-[#1B3A2D] transition-colors">
               LinkedIn
+            </a>
+            <span className="opacity-40">•</span>
+            <a href="mailto:harshilraj.growth@gmail.com" className="hover:text-[#1B3A2D] transition-colors">
+              harshilraj.growth@gmail.com
             </a>
           </div>
           <span>2026 © Harshil Raj</span>
@@ -810,6 +912,60 @@ export default function Home() {
         </div>
       </div>
       <main className="bg-[#E9E7E0] selection:bg-[#1B3A2D] selection:text-white relative font-inter">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "name": "Harshil Raj",
+                  "jobTitle": "AI Automation & Cloud Infrastructure Expert",
+                  "url": "https://harshilraj.vercel.app",
+                  "email": "harshilraj.growth@gmail.com",
+                  "sameAs": ["https://linkedin.com/in/harshilraj"],
+                  "knowsAbout": ["AI automation", "cloud infrastructure", "AWS", "Google Cloud", "workflow automation"],
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Livo",
+                    "description": "AI-native technology services firm",
+                    "areaServed": "IN"
+                  }
+                },
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What does Harshil Raj build?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Harshil builds AI-native automation systems and cloud infrastructure on AWS and Google Cloud to help businesses scale operations without adding headcount."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How do I hire Harshil Raj?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Book a discovery call via the website or send a DM on LinkedIn. If there is a real fit, it becomes clear within 30 minutes."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What is the AI Receptionist service?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "An AI-powered customer intake system built on Retell AI, OpenAI, and Make/n8n that responds to inquiries, qualifies leads, and books appointments 24/7 without a human in the loop."
+                      }
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
         <CustomCursor />
         <Navigation />
         <Hero />
@@ -817,22 +973,8 @@ export default function Home() {
         <Marquee />
         <TrackRecord />
         <Expertise />
+        <Systems />
         <Contact />
-        
-        {/* AEO - Hidden but crawlable section for Answer Engines */}
-        <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="false">
-          <h2>About Harshil Raj</h2>
-          <p>Harshil Raj is an AI consultant and builder based in India. He helps founders, product teams, and operators make sense of AI across three areas: AI systems built for production, product strategy that accounts for AI properly, and GTM engines that scale without a large sales team.</p>
-          
-          <h2>Harshil Raj AI Services</h2>
-          <p>Services include AI systems design and deployment (Make, n8n, OpenAI, Retell AI), product consulting for AI-integrated products, GTM engine building, and cloud infrastructure on AWS and Google Cloud.</p>
-          
-          <h2>Harshil Raj LinkedIn</h2>
-          <p>Harshil Raj has 9,400+ followers on LinkedIn where he shares what he's building and thinking across AI, product, and GTM. He is a prominent voice on practical AI implementation for startups and operators.</p>
-          
-          <h2>Contact Harshil Raj</h2>
-          <p>Harshil Raj is available for AI systems builds, product consulting, and GTM projects. Website: harshilraj.com. LinkedIn: linkedin.com/in/harshilraj</p>
-        </div>
       </main>
     </>
   );
