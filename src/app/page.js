@@ -632,27 +632,39 @@ const Expertise = () => {
 };
 
 const Systems = () => {
-  const cards = [
+  const list = [
     {
-      num: "01",
+      sysId: "SYS-01",
+      visualId: "VISUALIZATION // REVENUE_PIPELINE",
+      img: "/revenue_pipeline_mockup.png",
       title: "Revenue Pipeline Engine",
-      desc: "An automated prospecting system that continuously discovers, enriches, and qualifies opportunities — so outbound never runs dry.",
+      desc: "An automated prospecting system that continuously discovers, enriches, and qualifies opportunities so outbound never runs dry.",
+      stack: "n8n, Clay, OpenAI, Apollo",
+      perf: "10,000+ leads processed monthly",
       challenge: "Manual prospecting consumed hours per week and made a consistent pipeline of qualified opportunities nearly impossible to maintain.",
       outcome: "A repeatable acquisition engine that identifies prospects, enriches company data, and routes qualified leads into the sales workflow."
     },
     {
-      num: "02",
+      sysId: "SYS-02",
+      visualId: "VISUALIZATION // FRONT_OFFICE",
+      img: "/front_desk_mockup.png",
       title: "Always-On Front Desk",
-      desc: "An AI-powered intake system that responds instantly, qualifies inquiries, and books appointments — at any hour, without a human in the loop.",
+      desc: "An AI powered intake system that responds instantly, qualifies inquiries, and books appointments at any hour, without a human in the loop.",
+      stack: "Retell AI, OpenAI, Make, Twilio",
+      perf: "99.9% uptime, 24/7/365 coverage",
       challenge: "Missed calls and delayed responses were costing real opportunities while creating overhead that didn't need to exist.",
-      outcome: "A 24/7 front-office layer that captures inquiries, handles common questions, and schedules appointments without touching a calendar."
+      outcome: "A 24/7 front office layer that captures inquiries, handles common questions, and schedules appointments without touching a calendar."
     },
     {
-      num: "03",
+      sysId: "SYS-03",
+      visualId: "VISUALIZATION // OPERATIONS_LAYER",
+      img: "/operations_layer_mockup.png",
       title: "Autonomous Operations Layer",
-      desc: "A connected ecosystem of AI workflows that runs the repetitive work across teams and systems — automatically.",
+      desc: "A connected ecosystem of AI workflows that runs the repetitive work across teams and systems automatically.",
+      stack: "Node.js, PostgreSQL, Make, n8n",
+      perf: "Cross-platform real-time sync",
       challenge: "Teams were losing hours to manual coordination, follow-ups, and data entry that required no real thinking.",
-      outcome: "Business-critical workflows run on their own. Manual effort drops. Teams redirect time to work that actually requires a human."
+      outcome: "Business critical workflows run on their own. Manual effort drops. Teams redirect time to work that actually requires a human."
     }
   ];
 
@@ -667,40 +679,105 @@ const Systems = () => {
             Systems that do the work.
           </h2>
           <p className="font-inter font-light text-[16px] text-[#A0A090] leading-[1.8] max-w-[640px]">
-            Real-world AI and automation infrastructure built to eliminate operational drag — not demos, not prototypes.
+            Real-world AI and automation infrastructure built to eliminate operational drag, not demos, not prototypes.
           </p>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full mt-16">
-          {cards.map((card, idx) => (
-            <FadeUp key={idx} delay={0.24 + idx * 0.12} className="h-full">
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-full hover:shadow-[0_0_30px_rgba(16,185,129,0.12)] hover:border-[#3ebf81]/40 hover:-translate-y-1.5 transition-all duration-300 ease-out group">
-                <span className="text-[#10B981] font-mono text-[14px] font-bold tracking-wider">
-                  {card.num}
-                </span>
-                <h3 className="text-[20px] md:text-[22px] font-inter font-extrabold text-white mt-4 mb-3 leading-tight">
-                  {card.title}
+        <div className="flex flex-col gap-24 w-full mt-20">
+          {list.map((system, idx) => (
+            <div
+              key={idx}
+              className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-center w-full pb-16 border-b border-[#2A2A2A] last:border-0 last:pb-0 ${
+                idx % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image Terminal Mockup */}
+              <FadeUp delay={0.2} className="w-full lg:w-1/2">
+                <div className="w-full rounded-2xl border border-[#2A2A2A] bg-white/[0.01] overflow-hidden group hover:border-[#10B981]/30 transition-all duration-300">
+                  <div className="flex justify-between items-center px-4 py-3 bg-[#161616]/60 border-b border-[#2A2A2A]">
+                    <span className="font-mono text-[10px] text-[#8C8C80] tracking-wider uppercase">
+                      {system.visualId}
+                    </span>
+                    <div className="flex gap-1.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#2A2A2A]" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#2A2A2A]" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#2A2A2A]" />
+                    </div>
+                  </div>
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={system.img}
+                      alt={system.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out opacity-80 group-hover:opacity-100"
+                    />
+                  </div>
+                </div>
+              </FadeUp>
+
+              {/* Specs & Description Panel */}
+              <FadeUp delay={0.3} className="w-full lg:w-1/2 flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="font-mono text-[11px] text-[#10B981] font-bold tracking-widest uppercase bg-[#10B981]/10 px-2.5 py-1 rounded">
+                    {system.sysId}
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
+                    </span>
+                    <span className="font-mono text-[10px] text-[#8C8C80] uppercase tracking-wider">
+                      ACTIVE // LIVE_METRICS
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-[24px] md:text-[28px] font-inter font-extrabold text-white mb-4 leading-tight">
+                  {system.title}
                 </h3>
-                <p className="text-[14px] md:text-[15px] text-[#A0A090] font-light leading-[1.6] mb-8">
-                  {card.desc}
-                </p>
                 
-                <div className="mt-auto pt-6 border-t border-white/5 space-y-4">
+                <p className="text-[15px] text-[#A0A090] font-light leading-[1.7] mb-6">
+                  {system.desc}
+                </p>
+
+                {/* Specs Grid */}
+                <div className="grid grid-cols-2 gap-4 border border-[#2A2A2A] bg-white/[0.01] rounded-xl p-4 mb-6">
+                  <div>
+                    <span className="font-mono text-[10px] text-[#666660] uppercase tracking-wider block mb-0.5">
+                      CORE STACK
+                    </span>
+                    <span className="text-[13px] text-white font-medium">
+                      {system.stack}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] text-[#666660] uppercase tracking-wider block mb-0.5">
+                      PERFORMANCE
+                    </span>
+                    <span className="text-[13px] text-white font-medium">
+                      {system.perf}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Challenge & Outcome */}
+                <div className="space-y-3 pt-4 border-t border-[#2A2A2A]">
                   <p className="text-[14px] text-[#A0A090] font-light leading-[1.6]">
-                    <strong className="text-[#F59E0B] font-medium">Challenge: </strong>
-                    {card.challenge}
+                    <strong className="text-[#F59E0B] font-medium font-inter">Challenge: </strong>
+                    {system.challenge}
                   </p>
                   <p className="text-[14px] text-[#A0A090] font-light leading-[1.6]">
-                    <strong className="text-[#10B981] font-medium">Outcome: </strong>
-                    {card.outcome}
+                    <strong className="text-[#10B981] font-medium font-inter">Outcome: </strong>
+                    {system.outcome}
                   </p>
                 </div>
-              </div>
-            </FadeUp>
+              </FadeUp>
+            </div>
           ))}
         </div>
 
-        <FadeUp delay={0.6} className="mt-16 text-center">
+        <FadeUp delay={0.6} className="mt-20 text-center">
           <a
             href="#contact"
             onClick={(e) => {
