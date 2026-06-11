@@ -1,0 +1,28 @@
+# Harshil Raj
+> Making sense of AI for people building products, startups, and systems.
+> Based in India. Active on LinkedIn (9,400+ followers).
+
+## What I Do
+I help founders, operators, and product teams navigate AI — from strategy to systems.
+Three areas: AI Systems (building and deploying real workflows), Product (integrating AI into products that ship), Go-To-Market (using AI to build scalable GTM engines).
+
+## Services
+- AI systems design and deployment (multi-model workflows, automation pipelines, Make/n8n, Retell AI, OpenAI)
+- Cloud infrastructure on AWS and Google Cloud
+- AI strategy and consulting for startups and SMBs
+- GTM engine building with AI (content, outreach, operations)
+
+## Background
+- CSE graduate with AI/ML minor
+- Former Project Manager at a tech startup (shipped products under pressure)
+- Founder of Livo — delivered web, app, and Shopify builds for clients
+- Now building AI-native operations for businesses that want to scale without headcount
+
+## Proof of Work
+- 9,400+ LinkedIn followers (organic, no paid growth)
+- Active voice on AI-native operations, product, and GTM
+- Built AI receptionist systems on Retell AI + OpenAI + Make/n8n
+
+## Contact
+- LinkedIn: https://linkedin.com/in/harshilraj
+- Website: https://harshilraj.com
