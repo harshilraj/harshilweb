@@ -689,7 +689,8 @@ const TerminalConsole = ({ sysId }) => {
     let currentLine = 0;
     const interval = setInterval(() => {
       if (currentLine < currentLogs.length) {
-        setLogs(prev => [...prev, currentLogs[currentLine]]);
+        const lineIndex = currentLine;
+        setLogs(prev => [...prev, currentLogs[lineIndex]]);
         currentLine++;
       } else {
         clearInterval(interval);
